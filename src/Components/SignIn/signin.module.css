@@ -1,0 +1,108 @@
+.wrapper {
+  position: relative;
+  margin: 130px auto;
+  direction: rtl;
+  width: 80%;
+}
+
+.wrapper .home {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.wrapper .home .input {
+  padding: 10px;
+  width: 55%;
+}
+
+.wrapper .home .error {
+  color: red;
+  direction: ltr;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.wrapper .home .input input {
+  padding: 12px;
+  padding-left: 12px;
+  outline: none;
+  border: none;
+  box-shadow: 1px 1px 5px rgba(59, 59, 59, 0.452);
+  width: 100%;
+  font-size: 15px;
+  margin: 0 auto;
+  display: block;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  transition: all 0.5s linear;
+}
+
+.wrapper .home button:hover {
+  background: transparent;
+  color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.wrapper .home .input input:focus {
+  border: 2px solid var(--color4);
+  transition: all 0.5s linear;
+}
+
+.wrapper .home button {
+  margin-top: 10px;
+  padding: 14px 12px;
+  background-color: var(--color4);
+  color: var(--color5);
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  min-width: fit-content;
+  width: 150px;
+  margin-top: 20px;
+}
+
+.wrapper .home .chars {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(126, 126, 126);
+}
+
+.wrapper .home button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transition: all 0.5s linear;
+}
+
+.wrapper .home .change {
+  margin-top: 13px;
+}
+
+.wrapper .home .change span a {
+  color: var(--color4);
+  font-weight: 600;
+}
+
+@media screen and (max-width: 750px) {
+  .wrapper .home {
+    width: 100%;
+  }
+
+  .wrapper .home .input {
+    width: 100%;
+  }
+
+  .wrapper .home .input input {
+    width: 100%;
+  }
+
+  .wrapper .home {
+    width: 100%;
+  }
+}
