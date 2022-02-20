@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./signup.module.css";
 import Heading from "../UI/heading/heading";
@@ -9,17 +9,19 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "../../firebase";
+import { GlobalState } from "../../Context/globalState";
 
 const SignUp = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const { setUser, user } = useContext(GlobalState);
+
   const [fname, setFName] = useState("");
   const [lname, setLName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState({});
   const [loading, setLoading] = useState(false);
   const [snackbar, setSnackbar] = useState(false);
   const [error, setError] = useState("");
@@ -30,7 +32,6 @@ const SignUp = () => {
     setLoading(true);
     try {
       const user = await createUserWithEmailAndPassword(auth, email, password);
-      console.log("User: ", user);
       setUser(user);
       setLoading(false);
       navigate("/");
@@ -40,10 +41,6 @@ const SignUp = () => {
       setLoading(false);
     }
   };
-
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
 
   return (
     <div className={classes.wrapper}>

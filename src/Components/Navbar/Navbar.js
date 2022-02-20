@@ -1,27 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import classes from "./Navbar.module.css";
 import Navigation from "../UI/link/link";
 import SideBar from "../Sideabar/Sidebar";
 import logo from "../../Media/logo.svg";
 import { Link } from "react-router-dom";
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../../firebase";
+import { GlobalState } from "../../Context/globalState";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  const [user, setUser] = useState({});
-
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
+  const { user, setUser } = useContext(GlobalState);
 
   const clickHandler = () => {
     setToggle(!toggle);
   };
 
-  const logout = async () => {
-    await signOut(auth);
+  const logout = () => {
+    setUser({});
   };
+
+  console.log("Navbar User", user);
 
   return (
     <>
@@ -30,25 +27,36 @@ const Navbar = () => {
           {/* <Link to={"/"}>
             <img src={logo} alt="logo" />
           </Link> */}
+
+          <div className={classes.ring}>
+            <i className="fas fa-shopping-cart"></i>
+            <span>3</span>
+          </div>
+
           <div className={classes.ring}>
             <i className="fas fa-bell"></i>
             <span>3</span>
           </div>
+
           <div className={classes.user}>
             <i className="fas fa-user-circle"></i>
-            {/* {user.email ? (
-              <span>@{user.email.slice(0, user.email.indexOf("@"))}</span>
+            {Object.keys(user).length !== 0 ? (
+              <span>
+                @{user.user.email.slice(0, user.user.email.indexOf("@"))}
+              </span>
             ) : (
-              ""
-            )} */}
+              <span></span>
+            )}
           </div>
         </div>
 
         <div className={classes.right}>
           <Navigation path="contact" name="تواصل معنا" />
-          {user ? <Navigation path="addproduct" name="إضافة منتج" /> : null}
+          {Object.keys(user).length !== 0 ? (
+            <Navigation path="addproduct" name="إضافة منتج" />
+          ) : null}
           <Navigation path="/" name="الرئيسية" />
-          {!user ? (
+          {Object.keys(user).length === 0 ? (
             <>
               <Link to={"signin"}>
                 <button>تسجيل الدخول</button>

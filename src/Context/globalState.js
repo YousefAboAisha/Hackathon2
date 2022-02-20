@@ -4,7 +4,8 @@ import AppReducer from "./appReducer";
 // initial State
 const initialState = {
   favProducts: JSON.parse(localStorage.getItem("favProducts")) || [],
-  id: JSON.parse(localStorage.getItem("productId")) || [],
+  id: localStorage.getItem("productId") || "",
+  user: JSON.parse(localStorage.getItem("token")) || {},
 };
 
 // Create context
@@ -16,7 +17,8 @@ export const GlobalProvider = (props) => {
 
   useEffect(() => {
     localStorage.setItem("favProducts", JSON.stringify(state.favProducts));
-    localStorage.setItem("productId", JSON.stringify(state.id));
+    localStorage.setItem("productId", state.id);
+    localStorage.setItem("token", JSON.stringify(state.user));
   }, [state]);
 
   const addProductToFavProducts = (house) => {
@@ -31,6 +33,10 @@ export const GlobalProvider = (props) => {
     dispatch({ type: "SET_PRODUCT_ID", payload: id });
   };
 
+  const setUser = (user) => {
+    dispatch({ type: "SET_USER", payload: user });
+  };
+
   return (
     <GlobalState.Provider
       value={{
@@ -39,6 +45,8 @@ export const GlobalProvider = (props) => {
         removeProductFromFavProducts,
         id: state.id,
         setProductId,
+        user: state.user,
+        setUser,
       }}
     >
       {props.children}

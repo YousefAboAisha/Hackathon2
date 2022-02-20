@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
@@ -10,21 +10,17 @@ import Spinner from "./Components/UI/Spinner/spinner";
 import Weather from "./Components/Weather/weather";
 import SignIn from "./Components/SignIn/signIn";
 import SignUp from "./Components/SignUp/signUp";
-import { GlobalProvider } from "./Context/globalState";
-import { auth } from "./firebase";
-import { onAuthStateChanged } from "firebase/auth";
+import { GlobalProvider, GlobalState } from "./Context/globalState";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState({});
-
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
+  const user = localStorage.getItem("token");
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 0);
+    setTimeout(() => setLoading(false), 500);
   }, []);
+
+  console.log("App User", JSON.parse(user));
 
   let routes = (
     <Routes>
@@ -53,13 +49,14 @@ function App() {
     <Spinner />
   ) : (
     <BrowserRouter>
-      <GlobalProvider>{routes}</GlobalProvider>
-
-      <div className="App">
-        <Weather />
-        <Social />
-        <Navbar />
-      </div>
+      <GlobalProvider>
+        {routes}
+        <div className="App">
+          <Weather />
+          <Social />
+          <Navbar />
+        </div>
+      </GlobalProvider>
     </BrowserRouter>
   );
 }

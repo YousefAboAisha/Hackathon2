@@ -11,10 +11,10 @@
 }
 
 :root {
-  --color1: #cca43b;
+  --color1: #000;
   --color2: #363636;
   --color3: #2c394b;
-  --color4: #242f40;
+  --color4: #d12c2c;
   --color5: #fff;
   --color6: #eee;
   --mainFont: "Tajawal", sans-serif;
@@ -31,6 +31,6 @@ ul li {
 }
 
 body {
-  background-color: var(--color6);
+  background-color: var(--color5);
   overflow-x: hidden;
 }

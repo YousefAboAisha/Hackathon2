@@ -1,14 +1,22 @@
 import React, { useState } from "react";
-import classes from "./product.module.css";
-import Stars from "../../../Components/UI/Stars/stars";
+import classes from "./productCard.module.css";
+import Stars from "../Stars/stars";
 
-const Problem = ({ elem }) => {
+const Problem = ({ elem, type }) => {
   const [isOpened, setIsOpened] = useState(false);
+  const priceAfterDiscount = (
+    elem.price -
+    (elem.price * elem.discount) / 100
+  ).toFixed(2);
 
   return (
     <div className={classes.card}>
       <div className={classes.img}>
         <img src={elem.src} alt={"img"} loading="lazy" />
+        <button>
+          إضافة إلى السلة
+          <i className="fas fa-shopping-cart"></i>
+        </button>
       </div>
 
       <div className={classes.text}>
@@ -31,9 +39,11 @@ const Problem = ({ elem }) => {
           </p>
         )}
 
-        <button>
-          إضافة إلى السلة <i className="fas fa-shopping-cart"></i>
-        </button>
+        <div className={classes.price}>
+          {type !== "product" ? <span>$ {priceAfterDiscount}</span> : null}
+          <span>$ {elem.price}</span>
+        </div>
+        <button>شراء الآن</button>
       </div>
     </div>
   );

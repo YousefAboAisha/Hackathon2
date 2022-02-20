@@ -20,10 +20,10 @@ const AppReducer = (state, action) => {
         id: action.payload,
       };
 
-    case "SET_USER_TOKEN":
+    case "SET_USER":
       return {
         ...state,
-        token: action.payload,
+        user: action.payload,
       };
 
     default:

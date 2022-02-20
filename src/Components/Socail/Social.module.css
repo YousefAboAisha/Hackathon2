@@ -22,7 +22,7 @@
   cursor: pointer;
   transition: all 0.3s linear;
   color: var(--color4);
-  box-shadow: 1px 1px 7px var(--color4);
+  box-shadow: 1px 1px 7px rgb(70, 70, 70);
   background-color: var(--color5);
 }
 

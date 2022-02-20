@@ -1,5 +1,5 @@
 import React from "react";
-// import classes from "./slider.module.css";
+import classes from "./slider.module.css";
 import { Carousel } from "react-bootstrap";
 import img1 from "../../Media/img11.jpg";
 import img2 from "../../Media/img22.jpg";
@@ -24,10 +24,20 @@ const Slider = () => {
         return (
           <Carousel.Item interval={3800} key={index}>
             <img className="d-block w-100 " src={elem.src} alt="slide" />
-            <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
+            <div className={classes.box}>
+              <h2>
+                مرحباً بك في <span>متجرنا</span>
+              </h2>
+              <p>
+                {" "}
+                حيث الجودة والأسعار المناسبة والحملات التسويقية تجدها كلها في
+                مكان واحد
+              </p>
+              <div className={classes.input}>
+                <i class="fas fa-search"></i>
+                <input type={"text"} placeholder={"ابحث هنا ..."} />
+              </div>
+            </div>
           </Carousel.Item>
         );
       })}

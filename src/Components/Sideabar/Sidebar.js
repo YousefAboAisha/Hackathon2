@@ -1,19 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import classes from "./Sidebar.module.css";
 import { Link } from "react-router-dom";
 import logo from "../../Media/logo.svg";
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../../firebase";
+import { GlobalState } from "../../Context/globalState";
 
 const SideBar = ({ toggle, setToggle }) => {
-  const [user, setUser] = useState({});
+  const { user, setUser } = useContext(GlobalState);
 
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
-
-  const logout = async () => {
-    await signOut(auth);
+  const logout = () => {
+    setUser({});
   };
 
   return (
@@ -27,7 +22,7 @@ const SideBar = ({ toggle, setToggle }) => {
         الرئيسية
       </Link>
 
-      {user ? (
+      {Object.keys(user).length !== 0 ? (
         <Link to="addproduct" onClick={() => setToggle(false)}>
           إضافة منتج
         </Link>
@@ -38,7 +33,7 @@ const SideBar = ({ toggle, setToggle }) => {
       </Link>
 
       <div className={classes.btns}>
-        {!user ? (
+        {Object.keys(user).length === 0 ? (
           <>
             <Link to={"signin"} onClick={() => setToggle(false)}>
               <button>تسجيل الدخول</button>
@@ -56,7 +51,7 @@ const SideBar = ({ toggle, setToggle }) => {
         )}
       </div>
 
-      <img className={classes.logo} src={logo} alt="logo" />
+      {/* <img className={classes.logo} src={logo} alt="logo" /> */}
 
       <div className={classes.social}>
         <a target="_blank" href="https://www.facebook.com/yousef.aboesha.9/">

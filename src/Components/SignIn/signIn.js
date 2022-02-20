@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./signin.module.css";
 import axios from "axios";
@@ -7,15 +7,17 @@ import Notistack from "../UI/Snackbar/snackbar";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { GlobalState } from "../../Context/globalState";
 
 const SignIn = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const { setUser, user } = useContext(GlobalState);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState({});
   const [loading, setLoading] = useState(false);
   const [snackbar, setSnackbar] = useState(false);
   const [error, setError] = useState("");
@@ -25,7 +27,6 @@ const SignIn = () => {
     setLoading(true);
     try {
       const user = await signInWithEmailAndPassword(auth, email, password);
-      console.log("User: ", user);
       setUser(user);
       setLoading(false);
       navigate("/");
@@ -34,10 +35,6 @@ const SignIn = () => {
       setLoading(false);
     }
   };
-
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
 
   return (
     <div className={classes.wrapper}>

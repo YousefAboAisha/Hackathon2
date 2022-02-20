@@ -48,49 +48,31 @@
   letter-spacing: 1px;
 }
 
-.wrapper .home .box button,
-.container .person .left button {
-  margin-top: 5px;
-  padding: 10px 5px;
-  font-weight: 600;
-  background-color: var(--color4);
-  color: var(--color5);
-  font-size: 19px;
-  border: none;
-  box-shadow: 1px 1px 7px rgba(36, 36, 36, 0.897);
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  width: 22%;
-  min-width: fit-content;
-  font-family: var(--secondFont);
-}
-
-.wrapper .home .box button i,
-.container .person .left button i {
-  margin-right: 7px;
-}
-
-.wrapper .home .box button:hover,
-.container .person .left button:hover,
-.wrapper .box button:hover {
-  background-color: #fff;
-  transition: all 0.5s ease-in-out;
-  color: #000;
-}
-
-.container .person .left {
-  margin-bottom: 40px;
-}
-
-.container .person .left button i {
-  margin-left: 6px;
-}
-
 .wrapper .container {
   position: relative;
   margin: 10px auto;
   width: 85%;
   padding: 20px;
+}
+
+.container .brands {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+  margin: 15px 0 50px 0;
+  gap: 10px;
+}
+
+.container .brands img {
+  filter: grayscale(1);
+  padding: 5px;
+  transition: all 0.5s linear;
+}
+
+.container .brands img:hover {
+  filter: grayscale(0);
+  transition: all 0.5s linear;
 }
 
 .container .trending {
@@ -324,7 +306,7 @@
 
 .wrapper .ads .input input {
   padding: 15px;
-  padding-right: 42px;
+  padding-right: 50px;
   outline: none;
   border: none;
   width: 100%;
@@ -337,11 +319,11 @@
 
 .wrapper .ads .input i {
   position: absolute;
-  right: 8px;
+  right: 13px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--color4);
-  font-size: 25px;
+  font-size: 24px;
 }
 
 .wrapper .ads .input button {

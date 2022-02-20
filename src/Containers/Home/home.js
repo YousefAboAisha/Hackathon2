@@ -2,48 +2,15 @@ import React from "react";
 import classes from "./home.module.css";
 import Footer from "../../Components/Footer/Footer";
 import Modal from "../../Components/UI/modal/modal";
-import Product from "./problem/product";
 import Heading from "../../Components/UI/heading/heading";
-import Comments from "../../Components/Comments/comments";
 import Slider from "../../Components/Slider/slider";
+import BestOffers from "../../Components/Best_offers/bestOffers";
+import BestProducts from "../../Components/Best_products/bestProducts";
 
 const Home = () => {
   // useEffect(() => {
   //   window.scrollTo(0, 0);
   // }, []);
-
-  const discount = Math.floor(Math.random() * (50 - 20) + 20);
-  const rate = Math.floor(Math.random() * (6 - 4) + 4);
-
-  const products = [
-    {
-      src: "https://cdn.pixabay.com/photo/2016/01/22/02/13/meat-1155132__340.jpg",
-      name: "ستيك بلحم العجل",
-      info: "هذا النص هو مثال لنص",
-      description:
-        "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
-      discount: discount,
-      rate: Math.floor(Math.random() * (6 - 4) + 4),
-    },
-    {
-      src: "https://cdn.pixabay.com/photo/2017/03/10/13/57/cooking-2132874__340.jpg",
-      name: "فطائر الجبن",
-      info: "هذا النص هو مثال لنص",
-      description:
-        "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
-      discount: discount,
-      rate: Math.floor(Math.random() * (6 - 4) + 4),
-    },
-    {
-      src: "https://cdn.pixabay.com/photo/2018/08/29/19/01/fig-3640553__340.jpg",
-      name: "فطيرة التين",
-      info: "هذا النص هو مثال لنص",
-      description:
-        "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",
-      discount: discount,
-      rate: Math.floor(Math.random() * (6 - 4) + 4),
-    },
-  ];
 
   return (
     <div className={classes.wrapper}>
@@ -52,6 +19,13 @@ const Home = () => {
       </div>
 
       <div className={classes.container}>
+        <div className={classes.brands}>
+          <img src="https://img.icons8.com/color/70/000000/burger-king-logo.png" />
+          <img src="https://img.icons8.com/color/70/000000/starbucks.png" />
+          <img src="https://img.icons8.com/color/70/000000/mcdonalds.png" />
+          <img src="https://img.icons8.com/color/70/000000/dunkin-donuts.png" />
+          <img src="https://img.icons8.com/color/70/000000/pizza-five-eighths.png" />
+        </div>
         <div className={classes.trending}>
           <div className={classes.img}>
             <img
@@ -71,17 +45,14 @@ const Home = () => {
         </div>
 
         <section>
-          <Heading title="أفضل المنتجات" />
-          <div className={classes.cards}>
-            {products.map((elem, index) => {
-              return <Product key={index} elem={elem} />;
-            })}
-
-            <button className={classes.showMore}>عرض المزيد</button>
-          </div>
+          <BestOffers />
         </section>
 
         <section>
+          <BestProducts />
+        </section>
+
+        {/* <section>
           <Heading title="سياسة التوصيل" />
           <div className={classes.box}>
             <div className={classes.left}>
@@ -124,7 +95,7 @@ const Home = () => {
               />
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section>
           <div className={classes.ads}>
@@ -144,7 +115,7 @@ const Home = () => {
           </div>
         </section>
       </div>
-      <Comments />
+      {/* <Comments /> */}
       <Footer />
       {/* <Modal /> */}
     </div>
