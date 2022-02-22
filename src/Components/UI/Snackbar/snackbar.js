@@ -25,7 +25,12 @@ export default function CustomizedSnackbars(props) {
         onClose={handleClose}
         style={{ direction: "rtl" }}
       >
-        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
+        <Alert
+          style={{ direction: "rtl" }}
+          onClose={handleClose}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
           {props.msg}
         </Alert>
       </Snackbar>

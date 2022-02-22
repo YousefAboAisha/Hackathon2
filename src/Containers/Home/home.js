@@ -2,7 +2,6 @@ import React from "react";
 import classes from "./home.module.css";
 import Footer from "../../Components/Footer/Footer";
 import Modal from "../../Components/UI/modal/modal";
-import Heading from "../../Components/UI/heading/heading";
 import Slider from "../../Components/Slider/slider";
 import BestOffers from "../../Components/Best_offers/bestOffers";
 import BestProducts from "../../Components/Best_products/bestProducts";
@@ -20,11 +19,34 @@ const Home = () => {
 
       <div className={classes.container}>
         <div className={classes.brands}>
-          <img src="https://img.icons8.com/color/70/000000/burger-king-logo.png" />
-          <img src="https://img.icons8.com/color/70/000000/starbucks.png" />
-          <img src="https://img.icons8.com/color/70/000000/mcdonalds.png" />
-          <img src="https://img.icons8.com/color/70/000000/dunkin-donuts.png" />
-          <img src="https://img.icons8.com/color/70/000000/pizza-five-eighths.png" />
+          <img
+            src="https://img.icons8.com/color/65/000000/burger-king-logo.png"
+            alt="brand"
+          />
+          <img
+            src="https://img.icons8.com/color/65/000000/starbucks.png"
+            alt="brand"
+          />
+          <img
+            src="https://img.icons8.com/color/65/000000/mcdonalds.png"
+            alt="brand"
+          />
+          <img
+            src="https://img.icons8.com/color/65/000000/dunkin-donuts.png"
+            alt="brand"
+          />
+          <img
+            src="https://img.icons8.com/color/65/000000/pizza-five-eighths.png"
+            alt="brand"
+          />
+          <img
+            src="https://img.icons8.com/color/65/000000/organic-food.png"
+            alt="brand"
+          />
+          <img
+            src="https://img.icons8.com/cotton/65/000000/fast-food--v2.png"
+            alt="brand"
+          />
         </div>
         <div className={classes.trending}>
           <div className={classes.img}>

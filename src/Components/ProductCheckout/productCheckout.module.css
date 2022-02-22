@@ -1,0 +1,114 @@
+.checkout {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  width: 85%;
+  margin: 20px auto 0;
+}
+
+.offer {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap-reverse;
+  margin-bottom: 40px;
+  justify-content: center;
+  overflow-x: hidden;
+  gap: 10px;
+  background-color: #fff;
+  padding: 35px 15px;
+  width: 97%;
+  border-radius: 5px;
+  margin-top: 40px;
+  direction: rtl;
+}
+
+.offer .right,
+.offer .left {
+  padding: 15px;
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+.offer .left {
+  flex: 1 0 400px;
+  width: 50%;
+  align-self: start;
+}
+
+.offer .left h3,
+.famous h3 {
+  font-family: var(--secondFont);
+  font-size: 20px;
+  margin-bottom: 5px;
+  padding-right: 12px;
+  border-right: 6px solid var(--color4);
+}
+
+.offer .left span {
+  display: block;
+}
+
+.offer .left span:nth-of-type(1) {
+  color: rgb(88, 88, 88);
+  font-weight: 600;
+}
+
+.offer .left span:nth-of-type(1) i {
+  color: var(--color4);
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.offer .left span:nth-of-type(2) {
+  color: var(--color4);
+  font-weight: 600;
+}
+
+.offer .left p {
+  color: rgb(88, 88, 88);
+  margin-bottom: 10px;
+}
+
+.offer .left .rating span {
+  color: #f39c12;
+  display: inline;
+}
+
+.offer .right {
+  flex: 1 0 400px;
+}
+
+.offer .right img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(17, 17, 17, 0.753);
+  aspect-ratio: 4/2.7;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+@media screen and (max-width: 420px) {
+  .offer {
+    margin-top: 50px;
+  }
+
+  .offer .right {
+    flex: 1 0 350px;
+  }
+
+  .offer .left {
+    flex: 1 0 350px;
+  }
+
+  .join h2 {
+    font-size: 40px;
+  }
+}

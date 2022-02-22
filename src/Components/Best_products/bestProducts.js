@@ -27,7 +27,10 @@ function BestProducts() {
 
   return (
     <>
-      <Heading title="أفضل العروض" />
+      <Heading
+        title="أفضل المنتجات"
+        img="https://img.icons8.com/ios-filled/35/000000/total-sales-1.png"
+      />
       <div className={classes.cards}>
         {loading ? (
           <Spinner />

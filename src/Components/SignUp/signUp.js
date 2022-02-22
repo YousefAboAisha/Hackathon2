@@ -47,7 +47,10 @@ const SignUp = () => {
       {snackbar ? <Notistack msg={"تم إنشاء الحساب بنجاح"} /> : null}
 
       <div className={classes.home}>
-        <Heading title="إنشاء حساب جد يد" />
+        <Heading
+          title="إنشاء حساب جد يد"
+          img="https://img.icons8.com/ios-filled/35/000000/add-user-male.png"
+        />
         <div className={classes.input}>
           <input
             type="text"

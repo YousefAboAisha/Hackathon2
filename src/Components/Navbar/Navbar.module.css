@@ -2,9 +2,9 @@ nav {
   position: relative;
   display: flex;
   justify-content: space-between;
-  flex-flow: row wrap;
-  align-items: center;
+  flex-flow: row nowrap;
   position: fixed;
+  align-items: center;
   width: 100%;
   top: 0;
   left: 0;
@@ -12,16 +12,17 @@ nav {
   z-index: 100;
   min-height: 70px;
   background-color: rgba(255, 255, 255, 0.99);
+  direction: rtl;
 }
 
-.right {
+.left {
   display: flex;
   position: relative;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 70px;
 }
 
-.right a button {
+.left a button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,76 +37,123 @@ nav {
   cursor: pointer;
 }
 
-.right a .out {
+.left a .out {
   background: var(--color4);
   border: none;
 }
 
-.right a .out i {
+.left a .out i {
   margin-left: 8px;
   font-size: 16px;
 }
 
-.right a {
+.left a {
   position: relative;
   text-align: center;
   display: inline-block;
   min-width: 100px;
   font-weight: 600;
   transition: all 0.3s linear;
-  color: var(--color4);
+  color: var(--color1);
   font-family: var(--mainFont);
   margin: 2px;
+  opacity: 0.5;
 }
 
-.right a:hover {
+.left a:first-of-type {
+  opacity: 1;
+}
+
+.left a:hover {
   color: var(--color1);
   transition: all 0.3s linear;
 }
 
-.left .user {
+.middle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.middle input {
+  direction: rtl;
+  padding: 10px;
+  padding-left: 35px;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  border-radius: 3px;
+  transition: all 0.5s linear;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  transition: all 0.7s linear;
+  display: flex;
+  width: 100%;
+}
+
+.middle input:focus {
+  border: 1px solid var(--color4);
+  transition: all 0.7s linear;
+}
+
+.middle i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color4);
+  font-size: 18px;
+}
+
+.right .user {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
   display: flex;
   align-items: center;
-  margin-left: 30px;
+  padding: 10px;
 }
 
-.left .user i {
+.right .user i {
   color: var(--color4);
   font-weight: 600;
   font-size: 22px;
 }
 
-.left .user span {
+.right .user span {
   font-size: 13px;
 }
 
-.left {
+.right {
   display: flex;
   align-items: center;
-  margin-left: 15px;
+  margin-right: 100px;
+  margin-left: 30px;
 }
 
-.left img {
+.right img {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
   width: auto;
   height: 40px;
 }
 
-.left a {
+.right a {
   font-size: 20px;
   font-weight: 600;
   margin-left: 5px;
   color: #000;
 }
 
-.left a:hover {
+.right a:hover {
   color: #000;
 }
 
-.left .ring {
+.right .ring {
   display: flex;
   position: relative;
   justify-content: center;
@@ -114,14 +162,14 @@ nav {
   margin-left: 15px;
 }
 
-.left .ring i {
+.right .ring i {
   font-size: 22px;
   font-weight: 600;
   color: var(--color4);
   cursor: pointer;
 }
 
-.left .ring span {
+.right .ring span {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -139,7 +187,7 @@ nav {
 
 .toggle {
   position: absolute;
-  right: 15px;
+  left: 25px;
   background-color: var(--color4);
   padding: 9px 14px;
   border-radius: 5px;
@@ -157,17 +205,26 @@ nav {
   border: 1px solid var(--color4);
 }
 
+@media screen and (max-width: 1000px) {
+  .middle {
+    display: none;
+  }
+
+  .middle i {
+    display: block;
+  }
+}
+
 @media screen and (max-width: 770px) {
-  nav .right {
+  .left {
     display: none;
   }
 
   nav {
-    /* padding: 15px 0; */
     height: 70px;
   }
 
-  nav .toggle {
+  .toggle {
     display: block;
   }
 }

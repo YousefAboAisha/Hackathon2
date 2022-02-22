@@ -15,7 +15,7 @@ const SideBar = ({ toggle, setToggle }) => {
     <div
       className={classes.nav}
       style={{
-        transform: toggle ? "translateX(0)" : "translateX(100%)",
+        transform: toggle ? "translateX(0)" : "translateX(-100%)",
       }}
     >
       <Link to="/" onClick={() => setToggle(false)}>

@@ -1,0 +1,31 @@
+.card {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  border: 1px solid #ddd;
+  margin: 0 auto;
+  direction: rtl;
+  padding: 5px;
+  background-color: #222;
+}
+
+.card .product {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.card .product span {
+  font-size: 11px;
+  color: var(--color1);
+}
+
+.card .product img {
+  width: 80px;
+  height: 60px;
+}

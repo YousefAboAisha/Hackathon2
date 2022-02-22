@@ -7,10 +7,13 @@ import Projects from "./Containers/Problems/problems";
 import Contact from "./Containers/Contact/contact";
 import Social from "./Components/Socail/Social";
 import Spinner from "./Components/UI/Spinner/spinner";
-import Weather from "./Components/Weather/weather";
+import Weather from "./Components/Messenger/messenger";
 import SignIn from "./Components/SignIn/signIn";
 import SignUp from "./Components/SignUp/signUp";
-import { GlobalProvider, GlobalState } from "./Context/globalState";
+import About from "./Containers/About/about";
+import ProductCheckout from "./Components/ProductCheckout/productCheckout";
+import Cart from "./Components/Cart/cart";
+import { GlobalProvider } from "./Context/globalState";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -28,6 +31,9 @@ function App() {
       <Route path="contact" element={<Contact />} />
       <Route path="signin" element={<SignIn />} />
       <Route path="signup" element={<SignUp />} />
+      <Route path="about" element={<About />} />
+      <Route path="checkout" element={<ProductCheckout />} />
+      <Route path="about" element={<About />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
@@ -36,8 +42,11 @@ function App() {
     routes = (
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="checkout" element={<ProductCheckout />} />
+        <Route path="cart" element={<Cart />} />
         <Route path="addproduct" element={<Projects />} />
-        <Route path="contact" element={<Contact />} />
+        <Route path="contact" element={<Contact />} />{" "}
+        <Route path="about" element={<About />} />
         <Route path="signin" element={<SignIn />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="*" element={<Navigate to="/" />} />

@@ -13,14 +13,9 @@
 
 .box h2 {
   font-weight: 800;
-  font-size: 37px;
+  font-size: 47px;
   text-align: center;
   text-shadow: 1px 1px 7px rgb(53, 53, 53);
-}
-
-.box h2 span {
-  color: var(--color4);
-  text-shadow: 1px 1px 7px rgb(49, 49, 49);
 }
 
 .box .input {

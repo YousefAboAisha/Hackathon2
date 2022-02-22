@@ -78,7 +78,7 @@
 .container .trending {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 20px;
   margin-top: 50px;
 }
@@ -149,7 +149,7 @@
 .wrapper .cards {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   gap: 20px;
   margin: 0 auto;
   margin-top: 50px;

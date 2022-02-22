@@ -14,7 +14,7 @@
   --color1: #000;
   --color2: #363636;
   --color3: #2c394b;
-  --color4: #d12c2c;
+  --color4: #d35400;
   --color5: #fff;
   --color6: #eee;
   --mainFont: "Tajawal", sans-serif;
@@ -33,4 +33,5 @@ ul li {
 body {
   background-color: var(--color5);
   overflow-x: hidden;
+  background-image: url("./Media/backgroud2.png");
 }

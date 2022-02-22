@@ -21,11 +21,11 @@ export const GlobalProvider = (props) => {
     localStorage.setItem("token", JSON.stringify(state.user));
   }, [state]);
 
-  const addProductToFavProducts = (house) => {
+  const addProductToFav = (house) => {
     dispatch({ type: "ADD_PRODUCT_TO_WISH_LIST", payload: house });
   };
 
-  const removeProductFromFavProducts = (id) => {
+  const removeProductFromFav = (id) => {
     dispatch({ type: "REMOVE_PRODUCT_FORM_WISH_LIST", payload: id });
   };
 
@@ -41,8 +41,8 @@ export const GlobalProvider = (props) => {
     <GlobalState.Provider
       value={{
         favProducts: state.favProducts,
-        addProductToFavProducts,
-        removeProductFromFavProducts,
+        addProductToFav,
+        removeProductFromFav,
         id: state.id,
         setProductId,
         user: state.user,

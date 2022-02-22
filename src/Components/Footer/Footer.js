@@ -6,7 +6,7 @@ import logo from "../../Media/whitelogo.svg";
 const Footer = () => {
   return (
     <div className={classes.footer}>
-      {/* <img className={classes.logo} src={logo} alt="logo" /> */}
+      <img className={classes.logo} src={logo} alt="logo" />
       <div className={classes.left}>
         <div className={classes.box}>
           <div className={classes.leftSide}>

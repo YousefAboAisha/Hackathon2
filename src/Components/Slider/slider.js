@@ -33,10 +33,7 @@ const Slider = () => {
                 حيث الجودة والأسعار المناسبة والحملات التسويقية تجدها كلها في
                 مكان واحد
               </p>
-              <div className={classes.input}>
-                <i class="fas fa-search"></i>
-                <input type={"text"} placeholder={"ابحث هنا ..."} />
-              </div>
+              <div className={classes.input}></div>
             </div>
           </Carousel.Item>
         );

@@ -5,17 +5,14 @@ import SideBar from "../Sideabar/Sidebar";
 import logo from "../../Media/logo.svg";
 import { Link } from "react-router-dom";
 import { GlobalState } from "../../Context/globalState";
+import Menu from "../UI/menu/menu";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  const { user, setUser } = useContext(GlobalState);
+  const { user, favProducts } = useContext(GlobalState);
 
   const clickHandler = () => {
     setToggle(!toggle);
-  };
-
-  const logout = () => {
-    setUser({});
   };
 
   console.log("Navbar User", user);
@@ -24,54 +21,50 @@ const Navbar = () => {
     <>
       <nav>
         <div className={classes.left}>
-          {/* <Link to={"/"}>
-            <img src={logo} alt="logo" />
-          </Link> */}
-
-          <div className={classes.ring}>
-            <i className="fas fa-shopping-cart"></i>
-            <span>3</span>
-          </div>
-
-          <div className={classes.ring}>
-            <i className="fas fa-bell"></i>
-            <span>3</span>
-          </div>
-
-          <div className={classes.user}>
-            <i className="fas fa-user-circle"></i>
-            {Object.keys(user).length !== 0 ? (
-              <span>
-                @{user.user.email.slice(0, user.user.email.indexOf("@"))}
-              </span>
-            ) : (
-              <span></span>
-            )}
-          </div>
-        </div>
-
-        <div className={classes.right}>
-          <Navigation path="contact" name="تواصل معنا" />
+          <Navigation path="/" name="الرئيسية" />
           {Object.keys(user).length !== 0 ? (
             <Navigation path="addproduct" name="إضافة منتج" />
           ) : null}
-          <Navigation path="/" name="الرئيسية" />
-          {Object.keys(user).length === 0 ? (
-            <>
-              <Link to={"signin"}>
-                <button>تسجيل الدخول</button>
-              </Link>
-              <Link to={"signup"}>
-                <button>إنشاء حساب </button>
-              </Link>
-            </>
-          ) : (
-            <Link to={"/"}>
-              <button className={classes.out} onClick={logout}>
-                تسجيل الخروج <i className="fas fa-sign-out-alt"></i>
-              </button>
+          <Navigation path="about" name="من نحن" />
+          <Navigation path="contact" name="دعم فني" />
+        </div>
+
+        <div className={classes.middle}>
+          <i className="fas fa-search"></i>
+          <input type={"text"} placeholder={"ابحث هنا..."} />
+        </div>
+
+        <div className={classes.right}>
+          {Object.keys(user).length !== 0 ? (
+            <Link to="cart">
+              <div className={classes.ring}>
+                <i className="fas fa-shopping-cart"></i>
+                {favProducts.length === 0 ? null : (
+                  <span>{favProducts.length}</span>
+                )}
+              </div>
             </Link>
-          )}
+          ) : null}
+
+          {Object.keys(user).length !== 0 ? (
+            <div className={classes.ring}>
+              <i className="fas fa-heart"></i>
+            </div>
+          ) : null}
+
+          {Object.keys(user).length !== 0 ? (
+            <div className={classes.ring}>
+              <i className="fas fa-bell"></i>
+            </div>
+          ) : null}
+
+          <div className={classes.user}>
+            <Menu />
+          </div>
+
+          <Link to={"/"}>
+            <img src={logo} alt="logo" />
+          </Link>
         </div>
 
         <div className={classes.toggle} onClick={clickHandler}>

@@ -27,13 +27,16 @@ function BestOffers() {
 
   return (
     <>
-      <Heading title="أفضل العروض" />
+      <Heading
+        title="أفضل العروض"
+        img="https://img.icons8.com/glyph-neue/35/000000/sale-price-tag.png"
+      />
       <div className={classes.cards}>
         {loading ? (
           <Spinner />
         ) : (
           products.map((elem, index) => {
-            return <Product key={index} elem={elem} />;
+            return <Product key={index} elem={elem} type={"product"} />;
           })
         )}
       </div>

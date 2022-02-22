@@ -21,8 +21,8 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s linear;
-  color: var(--color4);
-  box-shadow: 1px 1px 7px rgb(70, 70, 70);
+  color: var(--color1);
+  box-shadow: 1px 1px 7px rgba(70, 70, 70, 0.767);
   background-color: var(--color5);
 }
 
