@@ -21,56 +21,9 @@
   position: absolute;
   right: 10px;
   top: 10px;
-  color: #000;
+  color: var(--color1);
   cursor: pointer;
-}
-
-.box .timezone {
-  font-weight: 600;
-  margin-bottom: 5px;
-  font-size: 17px;
-}
-
-.box .sky {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column wrap;
-  width: 100%;
-}
-
-.box .sky img {
-  transform: scale(1.5);
-  margin-bottom: 8px;
-}
-
-.box .sky .skyInfo {
-  transform: translateY(-5px);
-  margin-bottom: 7px;
-}
-
-.box .info {
-  position: relative;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.box .info .wrap {
-  background-color: #fff;
-  padding: 5px 15px;
-  display: flex;
-  position: relative;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-  border-radius: 7px;
-}
-
-.box .info .wrap span {
-  font-size: 14px;
+  font-size: 22px;
 }
 
 .toggle {

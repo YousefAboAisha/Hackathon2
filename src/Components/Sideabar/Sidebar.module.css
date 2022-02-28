@@ -36,30 +36,6 @@
   transition: all 0.3s linear;
 }
 
-.nav .btns {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.nav a button {
-  padding: 10px;
-  font-size: 12px;
-  border-radius: 17px;
-  outline: none;
-  border: 1px solid var(--color4);
-  background-color: var(--color4);
-  color: #fff;
-  transition: all 0.3s linear;
-  cursor: pointer;
-}
-
-.nav a .out {
-  background: red;
-  border: none;
-}
-
 .nav .social {
   position: relative;
   display: flex;
@@ -90,14 +66,15 @@
 .nav .logo {
   position: absolute;
   top: 50%;
-  opacity: 0.2;
+  transform: translateY(-50%);
+  opacity: 0.3;
   color: var(--color4);
-  height: 100px;
+  height: 320px;
 }
 
 @media screen and (max-width: 850px) {
   .nav {
     display: flex;
-    top: 60px;
+    top: 70px;
   }
 }

@@ -1,50 +1,37 @@
-.box {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  color: #fff;
-  z-index: 2;
-  width: 80%;
-}
-
-.box h2 {
-  font-weight: 800;
-  font-size: 47px;
-  text-align: center;
-  text-shadow: 1px 1px 7px rgb(53, 53, 53);
-}
-
-.box .input {
+/* .box {
   position: relative;
-  display: flex;
-  align-items: center;
-  width: 70%;
-  direction: rtl;
 }
 
-.box .input input {
-  padding: 15px;
-  padding-right: 50px;
-  outline: none;
-  border: none;
-  width: 100%;
-  font-size: 16px;
-  margin: 0 auto;
-  display: block;
-  border-radius: 3px;
-  transition: all 0.5s linear;
-  border-radius: 25px;
-}
-
-.box .input i {
+.box button {
   position: absolute;
-  right: 18px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--color4);
-  font-size: 24px;
+  bottom: 100px;
+  right: 7%;
+  padding: 17px 25px;
+  outline: none;
+  width: fit-content;
+  border: none;
+  border-radius: 17px;
+  background-color: var(--color4);
+  color: var(--color);
+  transition: all 0.5s linear;
+  cursor: pointer;
+  font-family: var(--secondFont);
+  box-shadow: 1px 1px 5px rgba(82, 82, 82, 0.603);
 }
+
+.box a button {
+  color: var(--color5);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.box button i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.box button:hover {
+  transition: all 0.5s linear;
+  background: var(--color5);
+  color: var(--color1);
+} */

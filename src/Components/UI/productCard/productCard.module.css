@@ -132,6 +132,7 @@
 .card .text button:disabled {
   opacity: 0.7;
   cursor: not-allowed;
+  border: 1px solid rgb(252, 121, 121);
 }
 
 .card .text .btns > button:nth-of-type(1) {
@@ -144,40 +145,11 @@
   background-color: #fff;
   color: var(--color4);
   box-shadow: none;
-  border: 1px solid var(--color4);
 }
 
 .card .text .btns > button:nth-of-type(2) i {
   font-size: 20px;
-}
-
-.card .btns .quantity {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 15%;
-  width: 100px;
-}
-
-.card .btns .quantity button {
-  background-color: rgb(36, 36, 36);
-  color: var(--color5);
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 1px 1px 5px rgba(51, 13, 5, 0.5);
-  padding: 5px 7px;
-  font-weight: 600;
-  width: 40px;
-}
-
-.card .btns .quantity span {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  transform: translateY(3px);
+  color: rgb(252, 121, 121);
 }
 
 .card .price {

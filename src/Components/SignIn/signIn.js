@@ -30,6 +30,7 @@ const SignIn = () => {
       setUser(user);
       setLoading(false);
       navigate("/");
+      window.location.reload();
     } catch (error) {
       setError(error.message);
       setLoading(false);

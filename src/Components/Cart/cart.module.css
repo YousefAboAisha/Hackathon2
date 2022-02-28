@@ -3,44 +3,145 @@
   flex-flow: column wrap;
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 85%;
-  height: 600px;
-  margin: 80px auto;
+  margin: 60px auto;
   padding: 20px;
-}
-
-.box .user {
-  position: relative;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  color: var(--color5);
-  gap: 5px;
-  padding: 5px;
-  height: fit-content;
-}
-
-.box .user span {
-  color: var(--color1);
-}
-
-.box .user i {
-  font-size: 48px;
-  color: var(--color4);
+  background-color: transparent;
+  direction: rtl;
 }
 
 .box .favorite {
   position: relative;
-  width: 100%;
+  width: 80%;
   margin-top: 30px;
   border-radius: 5px;
+  min-height: 300px;
+}
+
+.box .favorite > h2 {
+  text-align: center;
+  font-size: 17px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  font-weight: 600;
 }
 
 .box .favorite .header {
   position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 15px 25px;
   color: #000;
-  padding: 15px 10px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  border-radius: 7px;
+  margin: 10px auto;
+}
+
+.box .stepper {
+  width: 60%;
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding: 20px;
+  margin: 10px auto;
+  height: fit-content;
+  box-shadow: 1px 1px 8px rgba(34, 34, 34, 0.363);
+  background: #fff;
+  border-radius: 10px;
+}
+
+.box .btns {
+  position: relative;
+  display: flex;
+  align-self: flex-start;
+  gap: 15px;
+  padding: 10px;
+  margin-right: 6%;
+  margin-top: 15px;
+}
+
+.box .stepper .btns button,
+.box .totalPrice button {
+  font-size: 15px;
+  padding: 10px 16px;
+  outline: none;
+  box-shadow: inset 3px 3px 25px var(--color4);
+  border: 1px solid var(--color4);
+  border-radius: 17px;
+  background-color: var(--color4);
+  color: var(--color5);
+  box-shadow: 1px 1px 5px rgba(97, 97, 97, 0.664);
+  transition: all 0.5s linear;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.box .stepper .btns button:nth-of-type(2) {
+  background: none;
+  color: var(--color4);
+}
+
+.box .stepper .btns button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transition: all 0.5s linear;
+}
+
+.box .totalPrice {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  padding: 10px 15px;
+  gap: 15px;
+  margin: 20px auto;
+  background-color: var(--color5);
+}
+
+.box .totalPrice div {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.box .totalPrice div span {
+  font-weight: 600;
+}
+
+.box .totalPrice div span:nth-of-type(1) {
+  width: 180px;
+}
+
+.box .totalPrice div span:nth-of-type(2) {
+  color: var(--color4);
+}
+
+.box .totalPrice button {
+  width: 50%;
+  margin: 10px auto;
+}
+
+.box .totalPrice button:hover {
+  background: transparent;
+  color: var(--color1);
+}
+
+.box .steps {
+  position: relative;
+}
+
+.box .steps span {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 770px) {
+  .box .stepper {
+    width: 100%;
+  }
 }

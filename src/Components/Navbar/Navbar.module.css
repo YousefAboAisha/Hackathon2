@@ -8,7 +8,7 @@ nav {
   width: 100%;
   top: 0;
   left: 0;
-  box-shadow: 2px 2px 10px rgba(63, 63, 63, 0.493);
+  box-shadow: 2px 2px 5px rgba(63, 63, 63, 0.493);
   z-index: 100;
   min-height: 70px;
   background-color: rgba(255, 255, 255, 0.99);
@@ -19,32 +19,7 @@ nav {
   display: flex;
   position: relative;
   align-items: center;
-  margin-right: 70px;
-}
-
-.left a button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  font-size: 12px;
-  border-radius: 17px;
-  outline: none;
-  border: 1px solid var(--color4);
-  background-color: var(--color4);
-  color: #fff;
-  transition: all 0.3s linear;
-  cursor: pointer;
-}
-
-.left a .out {
-  background: var(--color4);
-  border: none;
-}
-
-.left a .out i {
-  margin-left: 8px;
-  font-size: 16px;
+  margin-right: 120px;
 }
 
 .left a {
@@ -57,11 +32,6 @@ nav {
   color: var(--color1);
   font-family: var(--mainFont);
   margin: 2px;
-  opacity: 0.5;
-}
-
-.left a:first-of-type {
-  opacity: 1;
 }
 
 .left a:hover {
@@ -73,13 +43,13 @@ nav {
   position: relative;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 50%;
 }
 
 .middle input {
   direction: rtl;
   padding: 10px;
-  padding-left: 35px;
+  padding-right: 35px;
   outline: none;
   border: none;
   font-size: 14px;
@@ -99,11 +69,23 @@ nav {
 
 .middle i {
   position: absolute;
-  left: 10px;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--color4);
   font-size: 18px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  margin-left: 20px;
+  gap: 15px;
+}
+
+.right .logo {
+  height: 130px;
 }
 
 .right .user {
@@ -113,7 +95,6 @@ nav {
   flex-flow: column wrap;
   display: flex;
   align-items: center;
-  padding: 10px;
 }
 
 .right .user i {
@@ -126,11 +107,12 @@ nav {
   font-size: 13px;
 }
 
-.right {
-  display: flex;
-  align-items: center;
-  margin-right: 100px;
-  margin-left: 30px;
+.right .fav {
+  color: rgb(255, 142, 142);
+}
+
+.right .fav i {
+  font-size: 23px;
 }
 
 .right img {
@@ -159,14 +141,17 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  margin-left: 15px;
 }
 
 .right .ring i {
   font-size: 22px;
   font-weight: 600;
-  color: var(--color4);
+  color: var(--color1);
   cursor: pointer;
+}
+
+.right .lang i {
+  font-size: 22px;
 }
 
 .right .ring span {
@@ -177,7 +162,7 @@ nav {
   padding: 8px;
   width: 6px;
   height: 6px;
-  background-color: var(--color1);
+  background-color: var(--color4);
   border-radius: 50%;
   right: 2px;
   top: 2px;
@@ -218,6 +203,16 @@ nav {
 @media screen and (max-width: 770px) {
   .left {
     display: none;
+  }
+
+  /* .right .user {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  } */
+
+  .right .logo {
+    margin-right: 45%;
   }
 
   nav {

@@ -1,0 +1,68 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 35px;
+  background-color: #fff;
+  direction: rtl;
+  width: 100%;
+  border: 1px solid rgba(221, 221, 221, 0.849);
+  box-shadow: 1px 1px 5px rgba(49, 49, 49, 0.219);
+}
+
+.card .products,
+.card .price,
+.card .name,
+.card .address,
+.card .status {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.card div {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.card div span:nth-of-type(1) {
+  width: 120px;
+  color: var(--color4);
+  font-weight: 600;
+}
+
+.card > span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  background-color: var(--color6);
+  color: var(--color1);
+  padding: 5px 12px;
+}
+
+.one {
+  background-color: rgb(194, 194, 194);
+  padding: 5px 7px;
+  border-radius: 17px;
+  font-size: 14px;
+  color: var(--color5);
+}
+
+.two {
+  background-color: #f39c12;
+  padding: 5px 7px;
+  border-radius: 17px;
+  font-size: 14px;
+  color: var(--color5);
+}
+
+.three {
+  background-color: #44bd32;
+  padding: 5px 7px;
+  border-radius: 17px;
+  font-size: 14px;
+  color: var(--color5);
+}

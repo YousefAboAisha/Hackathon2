@@ -1,0 +1,27 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px #ddd;
+  border: 1px solid rgba(221, 221, 221, 0.658);
+  gap: 10px;
+  padding: 25px 15px;
+  direction: rtl;
+  transition: all 0.5s linear;
+}
+
+a:hover {
+  color: var(--color1);
+}
+
+.card:hover {
+  box-shadow: 1px 1px 8px rgb(161, 161, 161);
+  transition: all 0.5s linear;
+}
+
+.card span {
+  color: var(--color4);
+  font-weight: 600;
+}

@@ -14,6 +14,18 @@ const AppReducer = (state, action) => {
         ),
       };
 
+    case "ADD_PRODUCT_TO_CART":
+      return {
+        ...state,
+        cart: [...state.cart, action.payload],
+      };
+
+    case "REMOVE_PRODUCT_FORM_CART":
+      return {
+        ...state,
+        cart: state.cart.filter((product) => product.id !== action.payload),
+      };
+
     case "SET_PRODUCT_ID":
       return {
         ...state,

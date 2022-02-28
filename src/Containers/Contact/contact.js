@@ -122,10 +122,7 @@ const Contact = () => {
 
       <div className={classes.container}>
         <section>
-          <Heading
-            title="من نحن"
-            img="https://img.icons8.com/color/40/000000/under-computer.png"
-          />
+          <Heading title="من نحن" />
 
           <div className={classes.person}>
             <div className={classes.left}>
@@ -152,10 +149,7 @@ const Contact = () => {
         </section>
 
         <section>
-          <Heading
-            title="ميزاتنا"
-            img="https://img.icons8.com/external-flatart-icons-flat-flatarticons/40/000000/external-achievement-achievements-and-badges-flatart-icons-flat-flatarticons-2.png"
-          />
+          <Heading title="خدماتنا" />
 
           <div className={classes.cards}>
             {sCards.map((card, index) => {
@@ -172,32 +166,26 @@ const Contact = () => {
         </section>
 
         <section>
-          <Heading
-            title="فريق العمل"
-            img="https://img.icons8.com/fluency/40/000000/group.png"
-          />
+          <Heading title="فريق العمل" />
+          <div className={classes.cards}>
+            {personalCards.map((elem, index) => {
+              return (
+                <PersonalCards
+                  name={elem.name}
+                  title={elem.title}
+                  img={elem.img}
+                  facebook={elem.facebook}
+                  email={elem.email}
+                  instagram={elem.instagram}
+                  key={index}
+                />
+              );
+            })}
+          </div>
         </section>
-        <div className={classes.cards}>
-          {personalCards.map((elem, index) => {
-            return (
-              <PersonalCards
-                name={elem.name}
-                title={elem.title}
-                img={elem.img}
-                facebook={elem.facebook}
-                email={elem.email}
-                instagram={elem.instagram}
-                key={index}
-              />
-            );
-          })}
-        </div>
 
         <section>
-          <Heading
-            title="تواصل معنا"
-            img="https://img.icons8.com/external-itim2101-flat-itim2101/40/000000/external-contact-us-contact-and-message-itim2101-flat-itim2101-3.png"
-          />
+          <Heading title="تواصل معنا" />
 
           <div className={classes.contact}>
             {snackbar ? (

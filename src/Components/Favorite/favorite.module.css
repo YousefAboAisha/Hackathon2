@@ -1,0 +1,40 @@
+.box {
+  position: relative;
+  flex-flow: column wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  margin: 60px auto;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.box .favorite {
+  position: relative;
+  width: 80%;
+  margin-top: 30px;
+  border-radius: 5px;
+  min-height: 400px;
+}
+
+.box .favorite > h2 {
+  text-align: center;
+  font-size: 17px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  font-weight: 600;
+}
+
+.box .favorite .header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+  color: #000;
+  margin-bottom: 15px;
+  border-radius: 7px;
+  margin: 10px auto;
+}

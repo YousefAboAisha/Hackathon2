@@ -51,8 +51,6 @@
 .wrapper .container {
   position: relative;
   margin: 10px auto;
-  width: 85%;
-  padding: 20px;
 }
 
 .container .brands {
@@ -60,8 +58,11 @@
   display: flex;
   justify-content: space-evenly;
   flex-flow: row wrap;
-  margin: 15px 0 50px 0;
+  margin: 0 auto;
+  margin-top: 40px;
   gap: 10px;
+  width: 85%;
+  padding: 20px;
 }
 
 .container .brands img {
@@ -78,9 +79,12 @@
 .container .trending {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  margin: 0 auto;
   margin-top: 50px;
+  width: 85%;
+  padding: 20px;
 }
 
 .container .trending .img {
@@ -102,48 +106,9 @@
 }
 
 .wrapper section {
-  margin: 100px 0;
+  margin: 100px auto;
   direction: rtl;
-}
-
-.wrapper .heading {
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  position: relative;
-  padding: 10px;
-  width: 40%;
-  min-width: 300px;
-  margin: 10px auto;
-  margin-bottom: 40px;
-}
-
-.wrapper .heading h2 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  padding: 10px 20px;
-  font-size: 1.7em;
-  color: var(--color1);
-  font-family: var(--secondFont);
-  background-color: var(--color5);
-  z-index: 100;
-}
-
-.wrapper .heading::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  background-color: var(--color4);
-  height: 5px;
-  width: 100%;
-  left: 0;
-  border-radius: 50%;
-}
-
-.wrapper .heading h2 img {
-  margin-right: 7px;
+  width: 85%;
 }
 
 .wrapper .cards {
@@ -271,6 +236,7 @@
   align-items: center;
   flex-flow: column wrap;
   color: var(--color5);
+  direction: rtl;
 }
 
 .wrapper .ads::after {
@@ -288,7 +254,7 @@
   display: flex;
   flex-flow: column wrap;
   text-align: center;
-  width: 80%;
+  width: 60%;
 }
 
 .wrapper .ads .input {
@@ -296,7 +262,7 @@
   display: flex;
   flex-flow: column wrap;
   text-align: center;
-  width: 80%;
+  width: 60%;
   z-index: 10;
 }
 

@@ -3,7 +3,7 @@ import classes from "./slider.module.css";
 import { Carousel } from "react-bootstrap";
 import img1 from "../../Media/img11.jpg";
 import img2 from "../../Media/img22.jpg";
-import img3 from "../../Media/img33.jpg";
+import img4 from "../../Media/img44.jpg";
 
 const Slider = () => {
   const photos = [
@@ -14,7 +14,7 @@ const Slider = () => {
       src: img2,
     },
     {
-      src: img3,
+      src: img4,
     },
   ];
 
@@ -24,17 +24,6 @@ const Slider = () => {
         return (
           <Carousel.Item interval={3800} key={index}>
             <img className="d-block w-100 " src={elem.src} alt="slide" />
-            <div className={classes.box}>
-              <h2>
-                مرحباً بك في <span>متجرنا</span>
-              </h2>
-              <p>
-                {" "}
-                حيث الجودة والأسعار المناسبة والحملات التسويقية تجدها كلها في
-                مكان واحد
-              </p>
-              <div className={classes.input}></div>
-            </div>
           </Carousel.Item>
         );
       })}

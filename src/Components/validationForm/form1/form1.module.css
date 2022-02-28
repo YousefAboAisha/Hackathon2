@@ -1,0 +1,44 @@
+.box {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+  min-height: 280px;
+  margin-top: 20px;
+}
+
+.box > i {
+  font-size: 35px;
+  color: var(--color4);
+}
+
+.box h3 {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.box .input {
+  width: 90%;
+}
+
+.box .input input {
+  padding: 12px;
+  padding-left: 12px;
+  outline: none;
+  border: none;
+  box-shadow: 1px 1px 5px rgba(119, 119, 119, 0.452);
+  width: 90%;
+  font-size: 15px;
+  margin: 0 auto;
+  display: block;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  transition: all 0.5s ease-in-out;
+}
+
+.box .input input:focus {
+  border: 2px solid var(--color4);
+  transition: all 0.5s ease-in-out;
+}

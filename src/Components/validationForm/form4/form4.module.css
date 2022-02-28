@@ -1,0 +1,27 @@
+.box {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+  min-height: 280px;
+  margin-top: 20px;
+}
+
+.box h3 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.box i {
+  /* position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%; */
+  font-size: 120px;
+  color: #44bd32;
+}

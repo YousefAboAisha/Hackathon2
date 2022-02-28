@@ -1,18 +1,37 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./favProduct.module.css";
+import { GlobalState } from "../../../Context/globalState";
 
-const FavProduct = () => {
+const FavProduct = ({ card }) => {
+  const { removeProductFromFav, addProductToCart, cart } =
+    useContext(GlobalState);
+
+  let storedHouses = cart.find((product) => product.id === card.id);
+  const disabledBtn = storedHouses ? true : false;
+
+  console.log(card);
+
   return (
     <div className={classes.card}>
       <div className={classes.product}>
-        <img
-          src="https://cdn.pixabay.com/photo/2017/07/28/14/29/macarons-2548827__340.jpg"
-          alt="product"
-        />
-        <span>ستيك بصوص الدجاج</span>
+        <img src={card.src} alt="product" />
+        <span>{card.name}</span>
       </div>
-      <div className={classes.quantity}>2</div>
-      <div className={classes.price}>3</div>
+
+      <div className={classes.price}> $ {card.price}</div>
+
+      <div className={classes.add} onClick={() => addProductToCart(card)}>
+        <button disabled={disabledBtn}>
+          <i className="fas fa-cart-plus"></i>
+        </button>
+      </div>
+
+      <div
+        className={classes.remove}
+        onClick={() => removeProductFromFav(card.id)}
+      >
+        <i className="fas fa-trash-alt"></i>
+      </div>
     </div>
   );
 };

@@ -44,7 +44,18 @@ export default function AccountMenu() {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32 }}></Avatar>
+            <Avatar
+              sx={{
+                width: 32,
+                height: 32,
+                backgroundColor: "var(--color4)",
+                fontSize: "14px",
+              }}
+            >
+              {Object.keys(user).length !== 0
+                ? user.user.email.slice(0, 2).toUpperCase()
+                : null}
+            </Avatar>
           </IconButton>
         </Tooltip>
       </Box>
@@ -83,29 +94,58 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        {Object.keys(user).length === 0 ? (
-          [
-            <Link to={"signup"} key={1}>
-              <MenuItem>
-                <Avatar /> إنشاء حساب
-              </MenuItem>
-            </Link>,
-            <Link to={"signin"} key={2}>
-              <MenuItem>
-                <Avatar /> تسجيل الدخول
-              </MenuItem>
-            </Link>,
-          ]
-        ) : (
-          <Link to={"/"}>
-            <MenuItem onClick={logout}>
-              <ListItemIcon>
-                <Logout fontSize="small" />
-              </ListItemIcon>
-              تسجيل الخروج
-            </MenuItem>
-          </Link>
-        )}
+        {Object.keys(user).length === 0
+          ? [
+              <Link to={"signin"} key={2}>
+                <MenuItem
+                  style={{
+                    fontFamily: "var(--mainFont)",
+                    fontSize: "14px",
+                  }}
+                >
+                  <Avatar /> تسجيل الدخول
+                </MenuItem>
+              </Link>,
+              <Link to={"signup"} key={1}>
+                <MenuItem
+                  style={{
+                    fontFamily: "var(--mainFont)",
+                    fontSize: "14px",
+                  }}
+                >
+                  <Avatar /> إنشاء حساب
+                </MenuItem>
+              </Link>,
+            ]
+          : [
+              <Link to={"/orders"} key={3}>
+                <MenuItem
+                  style={{
+                    fontFamily: "var(--mainFont)",
+                    fontSize: "14px",
+                    direction: "rtl",
+                  }}
+                >
+                  طلباتي
+                </MenuItem>
+              </Link>,
+
+              <Link to={"/"} key={4}>
+                <MenuItem
+                  onClick={logout}
+                  style={{
+                    fontFamily: "var(--mainFont)",
+                    fontSize: "14px",
+                    direction: "rtl",
+                  }}
+                >
+                  <ListItemIcon>
+                    <Logout fontSize="small" />
+                  </ListItemIcon>
+                  تسجيل الخروج
+                </MenuItem>
+              </Link>,
+            ]}
       </Menu>
     </React.Fragment>
   );

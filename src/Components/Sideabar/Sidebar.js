@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import classes from "./Sidebar.module.css";
 import { Link } from "react-router-dom";
-import logo from "../../Media/logo.svg";
+import logo from "../../Media/logo-watermark.svg";
 import { GlobalState } from "../../Context/globalState";
+import MenuListComposition from "../UI/navMenu/navMenu";
 
 const SideBar = ({ toggle, setToggle }) => {
   const { user, setUser } = useContext(GlobalState);
@@ -22,36 +23,13 @@ const SideBar = ({ toggle, setToggle }) => {
         الرئيسية
       </Link>
 
-      {Object.keys(user).length !== 0 ? (
-        <Link to="addproduct" onClick={() => setToggle(false)}>
-          إضافة منتج
-        </Link>
-      ) : null}
+      <MenuListComposition />
 
       <Link to="contact" onClick={() => setToggle(false)}>
         تواصل معنا
       </Link>
 
-      <div className={classes.btns}>
-        {Object.keys(user).length === 0 ? (
-          <>
-            <Link to={"signin"} onClick={() => setToggle(false)}>
-              <button>تسجيل الدخول</button>
-            </Link>
-            <Link to={"signup"} onClick={() => setToggle(false)}>
-              <button>إنشاء حساب </button>
-            </Link>
-          </>
-        ) : (
-          <Link to={"/"} onClick={() => setToggle(false)}>
-            <button className={classes.out} onClick={logout}>
-              تسجيل الخروج <i className="fas fa-sign-out-alt"></i>
-            </button>
-          </Link>
-        )}
-      </div>
-
-      {/* <img className={classes.logo} src={logo} alt="logo" /> */}
+      <img className={classes.logo} src={logo} alt="logo" />
 
       <div className={classes.social}>
         <a target="_blank" href="https://www.facebook.com/yousef.aboesha.9/">

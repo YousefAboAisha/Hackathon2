@@ -1,0 +1,21 @@
+.box {
+  position: relative;
+  flex-flow: column wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.box .cards {
+  position: relative;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  gap: 25px;
+  width: 75%;
+}
