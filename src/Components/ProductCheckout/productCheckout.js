@@ -4,14 +4,11 @@ import classes from "./productCheckout.module.css";
 import Stars from "../UI/Stars/stars";
 import axios from "axios";
 import Spinner from "../UI/Spinner/spinner";
-import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router";
 
 const ProductCheckout = () => {
   const { id, addProductToCart } = useContext(GlobalState);
   const [data, setData] = useState([]);
-  const [count, setCount] = useState(1);
-  const [available, setAvailable] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -42,12 +39,6 @@ const ProductCheckout = () => {
     addProductToCart(elem);
   };
 
-  console.log(count);
-
-  useEffect(() => {
-    setAvailable(Math.floor(Math.random() * 20) + 5);
-  }, []);
-
   const product = data[id - 1];
 
   return (
@@ -66,24 +57,6 @@ const ProductCheckout = () => {
             <p>{product.description}</p>
 
             <span> $ {product.price}</span>
-
-            {/* <div className={classes.quantity}>
-              <button
-                onClick={inc}
-                disabled={count >= available ? true : false}
-              >
-                <i className="fas fa-plus-circle"></i>
-              </button>
-              <span>{count}</span>
-              <button disabled={count <= 1 ? true : false} onClick={dec}>
-                <i className="fas fa-minus-circle"></i>
-              </button>
-            </div>
-
-            <div className={classes.available}>
-              <span>الكمية المتاحة :</span>
-              <span>{available}</span>
-            </div> */}
 
             <button
               className={classes.btn}
@@ -126,7 +99,6 @@ const ProductCheckout = () => {
           على صورة حقيقية لتصميم الموقع.
         </p>
       </div> */}
-      <Footer />
     </div>
   );
 };

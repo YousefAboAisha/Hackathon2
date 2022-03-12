@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Containers/Home/home";
 import Contact from "./Containers/Contact/contact";
@@ -24,7 +24,7 @@ function App() {
     setTimeout(() => setLoading(false), 500);
   }, []);
 
-  console.log("Test", user == "{}");
+  console.log("Test", user === "{}");
 
   let routes = (
     <Routes>
@@ -38,7 +38,7 @@ function App() {
     </Routes>
   );
 
-  if (user != "{}") {
+  if (user !== "{}") {
     routes = (
       <Routes>
         <Route path="/" element={<Home />} />
